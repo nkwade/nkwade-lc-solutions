@@ -5,8 +5,8 @@
 #         self.next = next
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        return self.recursive(head, None)
-        #return self.iterative(head)
+        #return self.recursive(head, None)
+        return self.iterative(head)
     
     def iterative(self, head:Optional[ListNode]) -> Optional[ListNode]:
         if not head: return
