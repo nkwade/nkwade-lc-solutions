@@ -4,5 +4,5 @@ class Solution:
         while n:
             if n % 2 == 1:
                 count += 1
-            n = n // 2
+            n = n >> 1
         return count
