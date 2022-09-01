@@ -3,8 +3,7 @@ class Solution:
         out = 0
         
         for i in range(32):
-            bit = n & 1
-            out = out | bit
+            out = out | (n & 1)
             out = out << 1
             n = n >> 1
         
