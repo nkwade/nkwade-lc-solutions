@@ -8,16 +8,16 @@ class Node:
 
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
-        oldToNew = {}
+        oldToNew = {}#map the old nodes to their newly created copies
         
-        def create(node):
-            if node in oldToNew:
-                return oldToNew[node]
-            copy = Node(node.val)
-            oldToNew[node] = copy
-            for neighbor in node.neighbors:
-                copy.neighbors.append(create(neighbor))
+        def create(node): #creates a node
+            if node in oldToNew: #if the node has already been copied
+                return oldToNew[node] #return that copied node
+            copy = Node(node.val) #create a new node
+            oldToNew[node] = copy #map the old node to the copied node
+            for neighbor in node.neighbors: #copy all the neighbors
+                copy.neighbors.append(create(neighbor)) #recursive create the neighbor node
             
-            return copy
+            return copy#return the newly created node
         
-        return create(node) if node else None
+        return create(node) if node else None #return the head node 
