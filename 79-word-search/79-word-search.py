@@ -15,14 +15,12 @@ class Solution:
             board[i][j]=ch
             return(opt1 or opt2 or opt3 or opt4)
         
-        def f(board,word,n,m):
-            for i in range(0,n):
-                for j in range(0,m):
-                    if(board[i][j]==word[0]):
-                        if(search(0,i,j)):
-                            return True
-            return False
         n=len(board)
         m=len(board[0])
-        return(f(board,word,n,m))
-        return search(0, 0, 0)
+
+        for i in range(0,n):
+            for j in range(0,m):
+                if(board[i][j]==word[0]):
+                    if(search(0,i,j)):
+                        return True
+        return False
