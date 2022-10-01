@@ -12,8 +12,6 @@ class Solution:
 
             res = 1 if node.val >= maxVal else 0
             maxVal = max(maxVal, node.val)
-            res += dfs(node.left, maxVal)
-            res += dfs(node.right, maxVal)
-            return res
+            return res + dfs(node.left, maxVal) + dfs(node.right, maxVal)
 
         return dfs(root, root.val)
